@@ -15,5 +15,7 @@ extern struct
     int tagKeepCount;
     bool readKraalTag;
     bool readEPCTag;
+    bool filterTags;
 } tagReadFlags;
+
 #endif

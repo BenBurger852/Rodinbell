@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "include/rBell.h"
+
 // #include "c:\\Espressif\\frameworks\\esp-idf-v5.1.1\\components\\esp_hw_support\\include\\rtc_wdt.h"
 #include "rtc_wdt.h"
 //-----------------------------
@@ -20,6 +21,7 @@ struct
     int tagKeepCount;
     bool readKraalTag;
     bool readEPCTag;
+    bool filterTags;
 } tagReadFlags;
 //=============================================================================
 typedef struct tagstruct
@@ -65,6 +67,7 @@ uint8_t initFilter(uint8_t mSec, uint16_t minVal)
     filterTimeOut = mSec;     // for 1mS intervals
     minTicks = minVal;
     tagReadFlags.tagKeepCount = 0;
+    
     globalFilterVariable = 0;
     return 0;
 }

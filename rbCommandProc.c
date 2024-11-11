@@ -141,6 +141,15 @@ static int setTagFilter(char *s)
         if ((atoi(p) <= 9999))
         {
             // stopTimer();
+            if(atoi(p) == 0)
+            {
+                tagReadFlags.filterTags = false;       
+                cPrintf("Filter disabled\r\n"); 
+            }
+            else{
+                tagReadFlags.filterTags = true;
+                cPrintf("Filter set to: %d\r\n", atoi(p)); 
+            }
             initFilter(atoi(p) / 10, 0);
             // startTimer();
         }

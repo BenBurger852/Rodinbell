@@ -1,6 +1,7 @@
 #include "include/rBell.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
+#include "filterTags.h"
 // #include "c:\Espressif\frameworks\esp-idf-v5.1\components\esp_hw_support\include\rtc_wdt.h"
 #include "rtc_wdt.h"
 extern volatile uint32_t globalFilterVariable;
@@ -25,13 +26,7 @@ typedef union
 } GS1_BITS;
 
 GS1_BITS gs1Bits;
-//-----------------------------------------------------------
-extern struct
-{
-    bool showRawEPC;
-    bool countTags;
-    int tagKeepCount;
-} tagReadFlags;
+
 //=================================================================================
 void showVizNum(void)
 {

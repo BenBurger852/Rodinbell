@@ -279,6 +279,7 @@ int getRealtimeInventory(uint8_t *rbBuffer, uint8_t dataSize, uint8_t nrReads)
                                     ret = 1;
                                     cPrintf("\r\n");
                                 }
+                                
                             }
                         }
                     }
@@ -308,11 +309,16 @@ int getRealtimeInventory(uint8_t *rbBuffer, uint8_t dataSize, uint8_t nrReads)
                         }
                         else
                         {
+                            if(tagReadFlags.filterTags == false)
+                            {
+                                disectEpcTagNumber((uint8_t *)localEPCBuf);     //show epc number if filter is disabled
+                            }
                             // if(!checkFilterTo())
                             //{
                             // deleteTag((uint8_t *)localEPCBuf);
                             //    exitFilter();
                             // }
+
                         }
                     }
                 }
