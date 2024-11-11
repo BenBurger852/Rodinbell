@@ -7,6 +7,7 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 //new compile on asus
+//test commit
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
